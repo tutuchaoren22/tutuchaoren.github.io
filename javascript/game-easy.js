@@ -1,6 +1,6 @@
-const HOLES = document.querySelectorAll('.hole');
-const SCOREBOARD = document.querySelector('.score');
-const MOLES = document.querySelectorAll('.mole');
+const holes = document.querySelectorAll('.hole');
+const scoreBoard = document.querySelector('.score');
+const moles = document.querySelectorAll('.mole');
 const STARTBTN = document.getElementById('start_btn');
 let titleH1 = document.getElementById('title');
 
@@ -32,8 +32,9 @@ function startGame() {
         // TODO: 写当游戏时间结束后要发生的事
         titleH1.innerText = "Time Up!";
         scoreBoard.innerText = score;
-        startBtn.style.display = '';
+        STARTBTN.style.display = "";
         timeUp = true;
+        console.log('end yes yes')
     }, gameTime)
 }
 
@@ -52,7 +53,7 @@ function resetScoreAndTime() {
  * 出洞.
  */
 function peep() {
-    const time = randomTime(500, 1000);
+    const time = randomTime(700, 1000);
     const hole = randomHole(holes);
     comeOutAndStop(hole, time);
 }
@@ -77,12 +78,12 @@ function randomTime(min, max) {
  */
 function randomHole(holes) {
     // TODO: 写地鼠随机选择钻出地洞的逻辑，如果与上一个是相同地洞，则重新选择一个地洞.
-    let newMole = randomTime(1, 6);
-    while (newMole === lastMole) {
-        newMole = randomTime(1, 6);
+    let newHole = randomTime(1, 6);
+    while (newHole === lastHole) {
+        newHole = randomTime(1, 6);
     }
-    lastMole = newMole;
-    return holes[newMole];
+    lastHole = newHole;
+    return holes[newHole];
 }
 
 /**
