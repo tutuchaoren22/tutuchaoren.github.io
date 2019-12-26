@@ -28,7 +28,6 @@ function showBtnAnimation() {
 function startGame() {
     resetScoreAndTime();
     peep();
-
     setTimeout(() => {
         // TODO: 写当游戏时间结束后要发生的事
         titleH1.innerText = "Time Up!";
@@ -43,10 +42,10 @@ function startGame() {
  */
 function resetScoreAndTime() {
     // TODO: 写游戏的初始化设置
-    showTxt(titleH1, 'WHACK-A-MOLE!');
+    titleH1.innerText = 'WHACK-A-MOLE!';
     timeUp = false;
     score = 0;
-    showScore(SCOREBOARD, score);
+    scoreBoard.innerText = score;
 }
 
 /**
