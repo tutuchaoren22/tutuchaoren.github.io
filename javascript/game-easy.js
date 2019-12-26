@@ -108,6 +108,6 @@ function comeOutAndStop(hole, time) {
 moles.forEach(mole => mole.addEventListener('click', function(e) {
     // TODO: 在这里写用户点击地鼠发生的事.
     score += 1;
-    showScore(SCOREBOARD, score);
+    scoreBoard.innerText = score;
     mole.classList.remove('up');
 }));
