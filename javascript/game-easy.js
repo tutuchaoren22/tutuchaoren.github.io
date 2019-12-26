@@ -77,10 +77,9 @@ function randomTime(min, max) {
  */
 function randomHole(holes) {
     // TODO: 写地鼠随机选择钻出地洞的逻辑，如果与上一个是相同地洞，则重新选择一个地洞.
-    let lastMole;
-    let newMole = getRandom(1, 6);
+    let newMole = randomTime(1, 6);
     while (newMole === lastMole) {
-        newMole = getRandom(1, 6);
+        newMole = randomTime(1, 6);
     }
     lastMole = newMole;
     return holes[newMole];
@@ -112,10 +111,3 @@ moles.forEach(mole => mole.addEventListener('click', function(e) {
     showScore(SCOREBOARD, score);
     mole.classList.remove('up');
 }));
-
-function showTxt(titleH1, txt) {
-    titleH1.innerText = txt;
-}
-
-function showScore(SCOREBOARD, score) {
-    SCOREBOARD.innerText = score;
