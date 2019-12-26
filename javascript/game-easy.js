@@ -52,7 +52,7 @@ function resetScoreAndTime() {
  * 出洞.
  */
 function peep() {
-    const time = randomTime(200, 1000);
+    const time = randomTime(500, 1000);
     const hole = randomHole(holes);
     comeOutAndStop(hole, time);
 }
@@ -66,9 +66,7 @@ function peep() {
  */
 function randomTime(min, max) {
     // TODO: 写生成随机数的逻辑，
-    // return 0;
-    return Math.round(Math.random() * (max - min) + min);
-
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 /**
@@ -79,7 +77,6 @@ function randomTime(min, max) {
  */
 function randomHole(holes) {
     // TODO: 写地鼠随机选择钻出地洞的逻辑，如果与上一个是相同地洞，则重新选择一个地洞.
-    // return null;
     let lastMole;
     let newMole = getRandom(1, 6);
     while (newMole === lastMole) {
@@ -122,4 +119,3 @@ function showTxt(titleH1, txt) {
 
 function showScore(SCOREBOARD, score) {
     SCOREBOARD.innerText = score;
-}
